@@ -1,0 +1,31 @@
+<!-- <h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+
+<div>
+    <label for="name">Hero name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div> -->
+
+
+<!-- [(ngModel)] is Angular's two-way data binding syntax.
+
+Here it binds the hero.name property to the HTML textbox so 
+that data can flow in both directions: from the hero.name
+ property to the textbox, and from the textbox back to 
+ the hero.name.</div> -->
+ <!-- class binding [class.some-css-class]="some-condition" -->
+
+ <h2>My Heroes</h2>
+ <ul class="heroes">
+     <li 
+        *ngFor='let hero of heroes'
+        (click) = 'onSelect(hero)'
+        [class.selected]="hero === selectedHero"
+     >
+         <span class="badge">{{hero.id}}</span>
+         {{hero.name}}
+     </li>
+ </ul>
+
+<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
