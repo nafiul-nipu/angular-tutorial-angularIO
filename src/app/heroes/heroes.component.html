@@ -16,7 +16,7 @@ that data can flow in both directions: from the hero.name
  the hero.name.</div> -->
  <!-- class binding [class.some-css-class]="some-condition" -->
 
- <h2>My Heroes</h2>
+ <!-- <h2>My Heroes</h2>
  <ul class="heroes">
      <li 
         *ngFor='let hero of heroes'
@@ -26,6 +26,15 @@ that data can flow in both directions: from the hero.name
          <span class="badge">{{hero.id}}</span>
          {{hero.name}}
      </li>
- </ul>
+ </ul> -->
 
-<app-hero-detail [hero] = "selectedHero"></app-hero-detail>
+<!-- <app-hero-detail [hero] = "selectedHero"></app-hero-detail> -->
+
+
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>
